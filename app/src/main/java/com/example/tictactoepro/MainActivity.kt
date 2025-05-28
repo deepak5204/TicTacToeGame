@@ -27,6 +27,17 @@ class MainActivity : ComponentActivity() {
     // 1 - O
     // 2 - Null
 
+    val winningPositions = arrayOf(
+        listOf(0, 1, 2), // Top row
+        listOf(3, 4, 5), // Middle row
+        listOf(6, 7, 8), // Bottom row
+        listOf(0, 3, 6), // Left column
+        listOf(1, 4, 7), // Middle column
+        listOf(2, 5, 8), // Right column
+        listOf(0, 4, 8), // Diagonal \
+        listOf(2, 4, 6)  // Diagonal /
+    )
+
 
 
     fun playerTap(view: View) {
