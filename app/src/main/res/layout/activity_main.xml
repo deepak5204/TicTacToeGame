@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/hello_text" />
 
     <LinearLayout
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="270dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,96 +39,116 @@
         app:layout_constraintTop_toBottomOf="@+id/hello_text">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingRight="10dp">
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageView0"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c0"
+                android:contentDescription="test"/>
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
+                android:padding="10dp"
+                android:src="@drawable/x"
+                android:onClick="playerTap"
+                android:tag="c1"
+                android:contentDescription="@null"/>
 
             <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c2"
+                android:contentDescription="@null"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c3"
+                android:contentDescription="@null"/>
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c4"
+                android:contentDescription="@null"/>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c5"
+                android:contentDescription="@null"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10sp"
-                android:src="@drawable/o" />
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c6"
+                android:contentDescription="@null"/>
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c7"
+                android:contentDescription="@null"/>
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:onClick="playerTap"
+                android:tag="c8"
+                android:contentDescription="@null"/>
         </LinearLayout>
 
     </LinearLayout>
