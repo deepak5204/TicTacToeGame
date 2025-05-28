@@ -1,7 +1,10 @@
 package com.example.tictactoepro
 
+import android.media.Image
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat
 import com.example.tictactoepro.ui.theme.TicTacToeProTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +24,8 @@ class MainActivity : ComponentActivity() {
     // 0 - X
     // 1 - O
 
-    val activePlayer = 0
-    val gameState = mutableListOf(2, 2, 2, 2, 2, 2, 2, 2, 2)
+    private var activePlayer = 0
+    private val gameState = mutableListOf(2, 2, 2, 2, 2, 2, 2, 2, 2)
     // state meanings
     // 0 - X
     // 1 - O
@@ -41,13 +45,30 @@ class MainActivity : ComponentActivity() {
 
 
     fun playerTap(view: View) {
-        // Your logic here
+        val img = view as ImageView
+        val tappedImage = img.tag.toString().toInt()
+
+        Log.d("TAG", "playerTap: $tappedImage")
+
+        if (gameState[tappedImage] == 2) {
+            gameState[tappedImage] = activePlayer
+            img.translationY = -1000f
+
+            if (activePlayer == 0) {
+                img.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x))
+                activePlayer = 1
+            } else {
+                img.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o))
+                activePlayer = 0
+            }
+
+            img.animate().translationYBy(1000f).duration = 300
+        }
     }
 
-    @Override
-    protected  override fun onCreate(savedInstanceState: Bundle?) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Use XML layout instead of Compose
         setContentView(R.layout.activity_main)
     }
 }
