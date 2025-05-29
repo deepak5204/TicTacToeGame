@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -48,18 +49,19 @@ class MainActivity : ComponentActivity() {
         val img = view as ImageView
         val tappedImage = img.tag.toString().toInt()
 
-        Log.d("TAG", "playerTap: $tappedImage")
-
         if (gameState[tappedImage] == 2) {
             gameState[tappedImage] = activePlayer
             img.translationY = -1000f
 
+            val status: TextView = findViewById(R.id.textView)
             if (activePlayer == 0) {
                 img.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x))
                 activePlayer = 1
+                status.text = "O's Turn - Tap to play"
             } else {
                 img.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o))
                 activePlayer = 0
+                status.text = "X's Turn - Tap to play"
             }
 
             img.animate().translationYBy(1000f).duration = 300
